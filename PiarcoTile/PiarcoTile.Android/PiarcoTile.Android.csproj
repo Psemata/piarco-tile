@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -59,10 +59,28 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
+    <Compile Include="Models\Map.cs" />
+    <Compile Include="Models\Note.cs" />
+    <Compile Include="Models\Song.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <AndroidAsset Include="Assets\Songs\195940 MiddleIsland - Achromat\MiddleIsland - Achromat %28iJinjin%29 [4K Easy].osu" />
+    <AndroidAsset Include="Assets\Songs\195940 MiddleIsland - Achromat\MiddleIsland - Achromat %28iJinjin%29 [4K Hard].osu" />
+    <AndroidAsset Include="Assets\Songs\195940 MiddleIsland - Achromat\MiddleIsland - Achromat %28iJinjin%29 [4K Normal].osu" />
+    <AndroidAsset Include="Assets\Songs\195940 MiddleIsland - Achromat\MiddleIsland - Achromat %28iJinjin%29 [Fullerene%27s 4K Another].osu" />
+    <AndroidAsset Include="Assets\Songs\195940 MiddleIsland - Achromat\MiddleIsland - Achromat %28iJinjin%29 [Tidek%27s 4K Insane].osu" />
+    <AndroidAsset Include="Assets\Songs\195940 MiddleIsland - Achromat\MiddleIsland - Achromat %28iJinjin%29 [Tristan97%27s 4K White Another].osu" />
+    <AndroidAsset Include="Assets\Songs\682290 Hige Driver - Miracle Sugite Yabai %28feat shully%29\Hige Driver - Miracle Sugite Yabai %28feat. shully%29 %28Milan-%29 [Easy].osu" />
+    <AndroidAsset Include="Assets\Songs\682290 Hige Driver - Miracle Sugite Yabai %28feat shully%29\Hige Driver - Miracle Sugite Yabai %28feat. shully%29 %28Milan-%29 [Hard].osu" />
+    <AndroidAsset Include="Assets\Songs\682290 Hige Driver - Miracle Sugite Yabai %28feat shully%29\Hige Driver - Miracle Sugite Yabai %28feat. shully%29 %28Milan-%29 [Insane].osu" />
+    <AndroidAsset Include="Assets\Songs\682290 Hige Driver - Miracle Sugite Yabai %28feat shully%29\Hige Driver - Miracle Sugite Yabai %28feat. shully%29 %28Milan-%29 [Normal].osu" />
+    <AndroidAsset Include="Assets\Songs\716211 yuki - Spring Signal\yuki. - Spring Signal %28pishifat%29 [Collab Insane].osu" />
+    <AndroidAsset Include="Assets\Songs\716211 yuki - Spring Signal\yuki. - Spring Signal %28pishifat%29 [Easy].osu" />
+    <AndroidAsset Include="Assets\Songs\716211 yuki - Spring Signal\yuki. - Spring Signal %28pishifat%29 [Extra].osu" />
+    <AndroidAsset Include="Assets\Songs\716211 yuki - Spring Signal\yuki. - Spring Signal %28pishifat%29 [Hard].osu" />
+    <AndroidAsset Include="Assets\Songs\716211 yuki - Spring Signal\yuki. - Spring Signal %28pishifat%29 [Normal].osu" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <None Include="Properties\AndroidManifest.xml" />
@@ -92,5 +110,20 @@
       <Name>PiarcoTile</Name>
     </ProjectReference>
   </ItemGroup>
- <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Songs\195940 MiddleIsland - Achromat\Achromat.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Songs\682290 Hige Driver - Miracle Sugite Yabai %28feat shully%29\audio.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Songs\682290 Hige Driver - Miracle Sugite Yabai %28feat shully%29\Miracle_Sugite.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Songs\716211 yuki - Spring Signal\audio.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Songs\716211 yuki - Spring Signal\spring-signal.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>
