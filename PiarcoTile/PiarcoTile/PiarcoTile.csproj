@@ -13,6 +13,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Properties\**" />
+    <EmbeddedResource Remove="Properties\**" />
+    <None Remove="Properties\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="Songs\195940 MiddleIsland - Achromat\Achromat.mp3" />
     <None Remove="Songs\195940 MiddleIsland - Achromat\MiddleIsland - Achromat %28iJinjin%29 [4K Easy].osu" />
     <None Remove="Songs\195940 MiddleIsland - Achromat\MiddleIsland - Achromat %28iJinjin%29 [4K Hard].osu" />
@@ -60,10 +66,6 @@
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
     <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Properties\" />
   </ItemGroup>
 
   <ItemGroup>

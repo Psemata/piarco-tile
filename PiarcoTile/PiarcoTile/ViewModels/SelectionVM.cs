@@ -51,7 +51,8 @@ namespace PiarcoTile.ViewModels {
             this.songs.Add(new Song("Ce rêve bleu", "4:20", new List<string> { "Suce", "Echo", "Yo", "Hello" }));
             this.songs.Add(new Song("Comme un homme", "2:25", new List<string> { "Disney", "C'est", "Des", "Putes" }));
 
-            this.CurrentSong = this.songs[0];
+            this.currentIndex = 0;
+            this.CurrentSong = this.songs[currentIndex];
 
             this.NextSong = new Command(
                 execute:() => {
@@ -61,6 +62,7 @@ namespace PiarcoTile.ViewModels {
             this.PreviousSong = new Command(
                 execute:() => {
                     this.currentIndex = (currentIndex - 1) % this.songs.Count;
+                    this.currentIndex = this.currentIndex < 0 ? this.currentIndex + this.songs.Count : this.currentIndex;
                     this.CurrentSong = this.songs[currentIndex];
                 });
         }
