@@ -11,7 +11,46 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\Font\NexaDemo-Bold.ttf" />
+    <None Remove="Resources\Font\NexaDemo-Light.ttf" />
+    <None Remove="Resources\Font\NexaTextDemo-Bold.ttf" />
+    <None Remove="Resources\Font\NexaTextDemo-Light.ttf" />
+    <None Remove="Resources\Font\Ubuntu-Bold.ttf" />
+    <None Remove="Resources\Font\Ubuntu-BoldItalic.ttf" />
+    <None Remove="Resources\Font\Ubuntu-Italic.ttf" />
+    <None Remove="Resources\Font\Ubuntu-Light.ttf" />
+    <None Remove="Resources\Font\Ubuntu-LightItalic.ttf" />
+    <None Remove="Resources\Font\Ubuntu-Medium.ttf" />
+    <None Remove="Resources\Font\Ubuntu-MediumItalic.ttf" />
+    <None Remove="Resources\Font\Ubuntu-Regular.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
     <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\Font\NexaDemo-Bold.ttf" />
+    <Resource Include="Resources\Font\NexaDemo-Light.ttf" />
+    <Resource Include="Resources\Font\NexaTextDemo-Bold.ttf" />
+    <Resource Include="Resources\Font\NexaTextDemo-Light.ttf" />
+    <Resource Include="Resources\Font\Ubuntu-Bold.ttf" />
+    <Resource Include="Resources\Font\Ubuntu-BoldItalic.ttf" />
+    <Resource Include="Resources\Font\Ubuntu-Italic.ttf" />
+    <Resource Include="Resources\Font\Ubuntu-Light.ttf" />
+    <Resource Include="Resources\Font\Ubuntu-LightItalic.ttf" />
+    <Resource Include="Resources\Font\Ubuntu-Medium.ttf" />
+    <Resource Include="Resources\Font\Ubuntu-MediumItalic.ttf" />
+    <Resource Include="Resources\Font\Ubuntu-Regular.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Views\EndPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\SelectionPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>
