@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:PiarcoTile.ViewModels"
+             x:Class="PiarcoTile.Views.SelectionPage">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.Background>
+                <LinearGradientBrush StartPoint="0,0"
+                             EndPoint="0,1">
+                    <GradientStop Color="#FCE4EC"
+                          Offset="0.1"/>
+                    <GradientStop Color="#26C6DA"
+                          Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            
+            <!-- Change song -->
+            <Button Command="{Binding PreviousSong}" Grid.Row="3" Grid.Column="0" Text="←" FontAttributes="Bold" FontSize="30" TextColor="#263238" Padding="0, 0, 0, 13" Margin="15" BackgroundColor="Transparent"></Button>
+            <Button Command="{Binding NextSong}" Grid.Row="3" Grid.Column="3" Text="→" FontAttributes="Bold" FontSize="30" TextColor="#263238" Padding="0, 0, 0, 13" Margin="15" BackgroundColor="Transparent"></Button>
+            
+            <!-- Content -->
+            <Label Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Text="Sélection de musique" FontSize="29" TextColor="#263238" HorizontalTextAlignment="Center"/>
+            <Label Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Text="{Binding CurrentSong.name}" FontSize="25" TextColor="#263238" HorizontalTextAlignment="Center"/>
+            <Label Grid.Row="3" Grid.Column="1" Text="Durée :" FontSize="18" TextColor="#263238" HorizontalTextAlignment="Center"/>
+            <Label Grid.Row="3" Grid.Column="2" Text="{Binding CurrentSong.length}" FontSize="18" TextColor="#263238" HorizontalTextAlignment="Center"/>
+            <Picker Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" Title="Sélectionne une difficulté" TextColor="#263238" HorizontalTextAlignment="Center"  ItemsSource="{Binding CurrentSong.difficulties}"/>
+            <Button Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2" Text="Jouer" FontSize="25" BackgroundColor="{StaticResource ButtonColor}" BorderColor="Black" BorderWidth="0.1" CornerRadius="100"></Button>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

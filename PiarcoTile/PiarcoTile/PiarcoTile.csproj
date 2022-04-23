@@ -75,4 +75,13 @@
   <ItemGroup>
     <Resource Include="Songs\195940 MiddleIsland - Achromat\MiddleIsland - Achromat (iJinjin) [4K Easy].osu" />
   </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Views\EndPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\SelectionPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
 </Project>

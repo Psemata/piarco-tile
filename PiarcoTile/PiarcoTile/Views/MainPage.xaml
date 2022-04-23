@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PiarcoTile.Views.MainPage">
+    <ContentPage.Content>
+        <StackLayout Padding="20" Spacing="150">
+            <StackLayout.Background>
+                <LinearGradientBrush StartPoint="0,0"
+                             EndPoint="0,1">
+                    <GradientStop Color="#FCE4EC"
+                          Offset="0.1"/>
+                    <GradientStop Color="#26C6DA"
+                          Offset="1"/>
+                </LinearGradientBrush>
+            </StackLayout.Background>
+            <Label Style="{StaticResource MainTitle}" Text="Piarco Tile"/>
+            <Button Style="{StaticResource MainMenuButton}" Text="Jouer" Clicked="OnSelectionPageButtonClicked"></Button>
+            <Button Style="{StaticResource MainMenuButton}" Text="Réglages"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
