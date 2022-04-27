@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PiarcoTile.Views.GamePage">
+    <ContentPage.Content>
+        <RelativeLayout>
+            <RelativeLayout.Background>
+                <LinearGradientBrush StartPoint="0,0"
+                             EndPoint="0,1">
+                    <GradientStop Color="#FCE4EC"
+                          Offset="0.1"/>
+                    <GradientStop Color="#26C6DA"
+                          Offset="1"/>
+                </LinearGradientBrush>
+            </RelativeLayout.Background>
+            
+            <!-- Content and separations -->            
+            <!-- Content -->
+            <BoxView Color="#263238"
+                 RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0}"
+                 RelativeLayout.YConstraint="0"
+                 RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.25}"
+                 RelativeLayout.HeightConstraint="100"/>
+            <BoxView Color="#263238"
+                 RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.25}"
+                 RelativeLayout.YConstraint="100"
+                 RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.25}"
+                 RelativeLayout.HeightConstraint="100"/>
+            <BoxView Color="#263238"
+                 RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.50}"
+                 RelativeLayout.YConstraint="200"
+                 RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.25}"
+                 RelativeLayout.HeightConstraint="100"/>
+            <BoxView Color="#263238"
+                 RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.75}"
+                 RelativeLayout.YConstraint="300"
+                 RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.25}"
+                 RelativeLayout.HeightConstraint="100"/>
+            <!-- Separations -->
+            <!-- Vertical lines -->
+            <Rectangle BackgroundColor="Black"
+                 RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.25}"
+                 RelativeLayout.YConstraint="0"
+                 RelativeLayout.WidthConstraint="1"
+                 RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}"/>
+            <Rectangle BackgroundColor="Black"
+                 RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.50}"
+                 RelativeLayout.YConstraint="0"
+                 RelativeLayout.WidthConstraint="1"
+                 RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}"/>
+            <Rectangle BackgroundColor="Black"
+                 RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.75}"
+                 RelativeLayout.YConstraint="0"
+                 RelativeLayout.WidthConstraint="1"
+                 RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}"/>
+            <!-- Horizontal lines -->
+            <Rectangle BackgroundColor="Black"
+                 RelativeLayout.XConstraint="0"
+                 RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1.85}"
+                 RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}"
+                 RelativeLayout.HeightConstraint="1"/>
+
+
+        </RelativeLayout>
+    </ContentPage.Content>
+</ContentPage>
