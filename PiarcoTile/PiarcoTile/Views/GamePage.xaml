@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:views="clr-namespace:PiarcoTile.Views"
              x:Class="PiarcoTile.Views.GamePage">
     <ContentPage.Content>
         <RelativeLayout>
@@ -13,22 +14,22 @@
             
             <!-- Content and separations -->            
             <!-- Content -->
-            <BoxView Color="#263238"
-                 RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0}"
-                 RelativeLayout.YConstraint="0"
-                 RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.25}"
-                 RelativeLayout.HeightConstraint="100"/>
-            <BoxView Color="#263238"
+            <views:Tile
+                RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0}"
+                RelativeLayout.YConstraint="0"
+                RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.25}"
+                RelativeLayout.HeightConstraint="100"/>
+            <views:Tile
                  RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.25}"
                  RelativeLayout.YConstraint="100"
                  RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.25}"
                  RelativeLayout.HeightConstraint="100"/>
-            <BoxView Color="#263238"
+            <views:Tile
                  RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.50}"
                  RelativeLayout.YConstraint="200"
                  RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.25}"
                  RelativeLayout.HeightConstraint="100"/>
-            <BoxView Color="#263238"
+            <views:Tile
                  RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.75}"
                  RelativeLayout.YConstraint="300"
                  RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.25}"
