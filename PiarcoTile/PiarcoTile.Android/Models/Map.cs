@@ -6,7 +6,7 @@ using System.Text.RegularExpressions;
 
 namespace PiarcoTile.Models
 {
-    class Map
+    public class Map
     {
         string Name { get; set; }
         List<Note> Notes { get; set; }

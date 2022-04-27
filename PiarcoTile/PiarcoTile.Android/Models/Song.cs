@@ -6,7 +6,7 @@ using System.Text.RegularExpressions;
 
 namespace PiarcoTile.Models
 {
-    class Song
+    public class Song
     {
         string Name { get; set; }
         string Artist { get; set; }

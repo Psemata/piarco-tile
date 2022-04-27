@@ -5,12 +5,9 @@
     <ContentPage.Content>
         <RelativeLayout>
             <RelativeLayout.Background>
-                <LinearGradientBrush StartPoint="0,0"
-                             EndPoint="0,1">
-                    <GradientStop Color="#FCE4EC"
-                          Offset="0.1"/>
-                    <GradientStop Color="#26C6DA"
-                          Offset="1"/>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                    <GradientStop Color="#FCE4EC" Offset="0.1"/>
+                    <GradientStop Color="#26C6DA" Offset="1"/>
                 </LinearGradientBrush>
             </RelativeLayout.Background>
             
@@ -59,8 +56,6 @@
                  RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1.85}"
                  RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}"
                  RelativeLayout.HeightConstraint="1"/>
-
-
         </RelativeLayout>
     </ContentPage.Content>
 </ContentPage>

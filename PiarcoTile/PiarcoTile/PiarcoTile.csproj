@@ -19,51 +19,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="Songs\195940 MiddleIsland - Achromat\Achromat.mp3" />
-    <None Remove="Songs\195940 MiddleIsland - Achromat\MiddleIsland - Achromat %28iJinjin%29 [4K Easy].osu" />
-    <None Remove="Songs\195940 MiddleIsland - Achromat\MiddleIsland - Achromat %28iJinjin%29 [4K Hard].osu" />
-    <None Remove="Songs\195940 MiddleIsland - Achromat\MiddleIsland - Achromat %28iJinjin%29 [4K Normal].osu" />
-    <None Remove="Songs\195940 MiddleIsland - Achromat\MiddleIsland - Achromat %28iJinjin%29 [Fullerene%27s 4K Another].osu" />
-    <None Remove="Songs\195940 MiddleIsland - Achromat\MiddleIsland - Achromat %28iJinjin%29 [Tidek%27s 4K Insane].osu" />
-    <None Remove="Songs\195940 MiddleIsland - Achromat\MiddleIsland - Achromat %28iJinjin%29 [Tristan97%27s 4K White Another].osu" />
-    <None Remove="Songs\682290 Hige Driver - Miracle Sugite Yabai %28feat shully%29\audio.mp3" />
-    <None Remove="Songs\682290 Hige Driver - Miracle Sugite Yabai %28feat shully%29\Hige Driver - Miracle Sugite Yabai %28feat. shully%29 %28Milan-%29 [Easy].osu" />
-    <None Remove="Songs\682290 Hige Driver - Miracle Sugite Yabai %28feat shully%29\Hige Driver - Miracle Sugite Yabai %28feat. shully%29 %28Milan-%29 [Hard].osu" />
-    <None Remove="Songs\682290 Hige Driver - Miracle Sugite Yabai %28feat shully%29\Hige Driver - Miracle Sugite Yabai %28feat. shully%29 %28Milan-%29 [Insane].osu" />
-    <None Remove="Songs\682290 Hige Driver - Miracle Sugite Yabai %28feat shully%29\Hige Driver - Miracle Sugite Yabai %28feat. shully%29 %28Milan-%29 [Normal].osu" />
-    <None Remove="Songs\682290 Hige Driver - Miracle Sugite Yabai %28feat shully%29\Miracle_Sugite.jpg" />
-    <None Remove="Songs\716211 yuki - Spring Signal\audio.mp3" />
-    <None Remove="Songs\716211 yuki - Spring Signal\spring-signal.jpg" />
-    <None Remove="Songs\716211 yuki - Spring Signal\yuki. - Spring Signal %28pishifat%29 [Collab Insane].osu" />
-    <None Remove="Songs\716211 yuki - Spring Signal\yuki. - Spring Signal %28pishifat%29 [Easy].osu" />
-    <None Remove="Songs\716211 yuki - Spring Signal\yuki. - Spring Signal %28pishifat%29 [Extra].osu" />
-    <None Remove="Songs\716211 yuki - Spring Signal\yuki. - Spring Signal %28pishifat%29 [Hard].osu" />
-    <None Remove="Songs\716211 yuki - Spring Signal\yuki. - Spring Signal %28pishifat%29 [Normal].osu" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Include="Songs\195940 MiddleIsland - Achromat\Achromat.mp3" />
-    <EmbeddedResource Include="Songs\195940 MiddleIsland - Achromat\MiddleIsland - Achromat (iJinjin) [4K Hard].osu" />
-    <EmbeddedResource Include="Songs\195940 MiddleIsland - Achromat\MiddleIsland - Achromat (iJinjin) [4K Normal].osu" />
-    <EmbeddedResource Include="Songs\195940 MiddleIsland - Achromat\MiddleIsland - Achromat (iJinjin) [Fullerene's 4K Another].osu" />
-    <EmbeddedResource Include="Songs\195940 MiddleIsland - Achromat\MiddleIsland - Achromat (iJinjin) [Tidek's 4K Insane].osu" />
-    <EmbeddedResource Include="Songs\195940 MiddleIsland - Achromat\MiddleIsland - Achromat (iJinjin) [Tristan97's 4K White Another].osu" />
-    <EmbeddedResource Include="Songs\682290 Hige Driver - Miracle Sugite Yabai (feat shully)\audio.mp3" />
-    <EmbeddedResource Include="Songs\682290 Hige Driver - Miracle Sugite Yabai (feat shully)\Hige Driver - Miracle Sugite Yabai (feat. shully) (Milan-) [Easy].osu" />
-    <EmbeddedResource Include="Songs\682290 Hige Driver - Miracle Sugite Yabai (feat shully)\Hige Driver - Miracle Sugite Yabai (feat. shully) (Milan-) [Hard].osu" />
-    <EmbeddedResource Include="Songs\682290 Hige Driver - Miracle Sugite Yabai (feat shully)\Hige Driver - Miracle Sugite Yabai (feat. shully) (Milan-) [Insane].osu" />
-    <EmbeddedResource Include="Songs\682290 Hige Driver - Miracle Sugite Yabai (feat shully)\Hige Driver - Miracle Sugite Yabai (feat. shully) (Milan-) [Normal].osu" />
-    <EmbeddedResource Include="Songs\682290 Hige Driver - Miracle Sugite Yabai (feat shully)\Miracle_Sugite.jpg" />
-    <EmbeddedResource Include="Songs\716211 yuki - Spring Signal\audio.mp3" />
-    <EmbeddedResource Include="Songs\716211 yuki - Spring Signal\spring-signal.jpg" />
-    <EmbeddedResource Include="Songs\716211 yuki - Spring Signal\yuki. - Spring Signal (pishifat) [Collab Insane].osu" />
-    <EmbeddedResource Include="Songs\716211 yuki - Spring Signal\yuki. - Spring Signal (pishifat) [Easy].osu" />
-    <EmbeddedResource Include="Songs\716211 yuki - Spring Signal\yuki. - Spring Signal (pishifat) [Extra].osu" />
-    <EmbeddedResource Include="Songs\716211 yuki - Spring Signal\yuki. - Spring Signal (pishifat) [Hard].osu" />
-    <EmbeddedResource Include="Songs\716211 yuki - Spring Signal\yuki. - Spring Signal (pishifat) [Normal].osu" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
     <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
   </ItemGroup>
@@ -72,10 +27,6 @@
     <Reference Include="Mono.Android">
       <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\Common7\IDE\ReferenceAssemblies\Microsoft\Framework\MonoAndroid\v11.0\Mono.Android.dll</HintPath>
     </Reference>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Resource Include="Songs\195940 MiddleIsland - Achromat\MiddleIsland - Achromat (iJinjin) [4K Easy].osu" />
   </ItemGroup>
 
   <ItemGroup>

@@ -15,7 +15,7 @@ namespace PiarcoTile.Droid
     [Activity(Label = "PiarcoTile", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation | ConfigChanges.UiMode | ConfigChanges.ScreenLayout | ConfigChanges.SmallestScreenSize )]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
-        List<Song> Songs { get; set; }
+        public List<Song> Songs { get; set; }
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -29,7 +29,6 @@ namespace PiarcoTile.Droid
             string[] c = assets.List("Songs/");
             foreach(string s in c)
             {
-                Console.WriteLine(s);
                 MatchCollection matches = rx.Matches(s);
                 GroupCollection groups = matches[0].Groups;
                 Song song = new Song(int.Parse(groups[1].Value), groups[2].Value, groups[3].Value, "", "Songs/"+groups[0].Value, assets);

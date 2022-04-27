@@ -4,7 +4,7 @@ using System.Text;
 
 namespace PiarcoTile.Models
 {
-    class Note
+    public class Note
     {
         int X { get; set; }
         int Y { get; set; }
