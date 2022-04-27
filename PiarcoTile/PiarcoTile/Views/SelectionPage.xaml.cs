@@ -21,7 +21,7 @@ namespace PiarcoTile.Views {
         }
 
         async void OnPlayButtonClicked(object sender, EventArgs e) {
-            await Navigation.PushModalAsync(new NavigationPage(new GamePage()));
+            await Navigation.PushModalAsync(new NavigationPage(new GamePage((this.BindingContext as SelectionVM).CurrentSong)));
         }
     }
 }
