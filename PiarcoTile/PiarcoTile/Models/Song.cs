@@ -13,7 +13,7 @@ namespace PiarcoTile.Models
         string Artist { get; set; }
         int ID { get; set; }
         string Music { get; set; }
-        List<Map> Maps { get; set; }
+        public List<Map> Maps { get; set; }
 
         public Song(int id, string name, string artist, string music, string path, IAssetService assets)
         {
@@ -28,10 +28,9 @@ namespace PiarcoTile.Models
         private void GenerateMaps(string path, IAssetService assets)
         {
             string[] c = assets.GetAssetList(path);
-            Regex rx = new Regex(@"[(.+)]");
+            Regex rx = new Regex(@"\[(.+)\]");
             foreach (string s in c)
             {
-                Console.WriteLine(s);
                 if (s.Contains(".osu"))
                 {
                     MatchCollection matches = rx.Matches(s);

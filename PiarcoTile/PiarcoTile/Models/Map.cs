@@ -8,7 +8,7 @@ namespace PiarcoTile.Models
 {
     public class Map
     {
-        string Name { get; set; }
+        public string Name { get; set; }
         List<Note> Notes { get; set; }
 
         public Map(string name, Stream map)
@@ -38,6 +38,10 @@ namespace PiarcoTile.Models
                         read = true;
                 }
             }
+        }
+        public override string ToString()
+        {
+            return Name;
         }
     }
 }
