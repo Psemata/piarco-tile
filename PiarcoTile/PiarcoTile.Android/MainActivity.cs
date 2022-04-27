@@ -23,17 +23,6 @@ namespace PiarcoTile.Droid
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             LoadApplication(new App());
-            Songs = new List<Song>();
-            Regex rx = new Regex(@"(\d+)\s(.+)\s-\s(.+)");
-            AssetManager assets = this.Assets;
-            string[] c = assets.List("Songs/");
-            foreach(string s in c)
-            {
-                MatchCollection matches = rx.Matches(s);
-                GroupCollection groups = matches[0].Groups;
-                Song song = new Song(int.Parse(groups[1].Value), groups[2].Value, groups[3].Value, "", "Songs/"+groups[0].Value, assets);
-                Songs.Add(song);
-            }
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {

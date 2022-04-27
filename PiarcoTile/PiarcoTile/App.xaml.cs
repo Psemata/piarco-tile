@@ -8,8 +8,8 @@ namespace PiarcoTile {
         public App() {
             InitializeComponent();
             // Start page
-            //this.MainPage = new NavigationPage(new MainPage());
-            this.MainPage = new NavigationPage(new GamePage());
+            this.MainPage = new NavigationPage(new MainPage());
+            //this.MainPage = new NavigationPage(new GamePage());
         }
 
         protected override void OnStart() {
