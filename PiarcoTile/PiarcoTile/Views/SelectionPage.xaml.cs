@@ -19,5 +19,9 @@ namespace PiarcoTile.Views {
             NavigationPage.SetHasNavigationBar(this, false);
             NavigationPage.SetHasBackButton(this, false);
         }
+
+        async void OnPlayButtonClicked(object sender, EventArgs e) {
+            await Navigation.PushModalAsync(new NavigationPage(new GamePage((this.BindingContext as SelectionVM).CurrentSong)));
+        }
     }
 }
