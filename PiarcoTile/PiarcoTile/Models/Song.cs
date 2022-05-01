@@ -10,7 +10,7 @@ namespace PiarcoTile.Models
     public class Song
     {
         public string Name { get; set; }
-        string Artist { get; set; }
+        public string Artist { get; set; }
         int ID { get; set; }
         string Music { get; set; }
         public List<Map> Maps { get; set; }

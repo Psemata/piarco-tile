@@ -46,6 +46,7 @@ namespace PiarcoTile.ViewModels {
         private Song currentSong;
         public Song CurrentSong { get { return this.currentSong;  } private set { SetProperty<Song>(ref currentSong, value); } }
 
+        // ICommands used to switch between the available songs
         public ICommand NextSong { get; private set; }
         public ICommand PreviousSong { get; private set; }
 
@@ -74,13 +75,14 @@ namespace PiarcoTile.ViewModels {
                 });
         }
 
-        public void GetSongs()
-        {
+        /// <summary>
+        /// Load the songs present in the ressources
+        /// </summary>
+        public void GetSongs() {
             songs = new List<Song>();
             Regex rx = new Regex(@"(\d+)\s(.+)\s-\s(.+)");
             string[] c = service.GetAssetList("Songs/");
-            foreach (string s in c)
-            {
+            foreach (string s in c) {
                 MatchCollection matches = rx.Matches(s);
                 GroupCollection groups = matches[0].Groups;
                 Song song = new Song(int.Parse(groups[1].Value), groups[3].Value, groups[2].Value, "", "Songs/" + groups[0].Value, service);

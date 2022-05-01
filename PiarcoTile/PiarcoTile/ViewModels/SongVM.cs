@@ -7,9 +7,11 @@ namespace PiarcoTile.ViewModels {
     public class SongVM {
 
         private Song song;
+        private int difficultyIndex;
 
-        public SongVM(Song song) {
+        public SongVM(Song song, int difficultyIndex) {
             this.song = song;
+            this.difficultyIndex = difficultyIndex;
         }
     }
 }

@@ -11,29 +11,7 @@
                     <GradientStop Color="#26C6DA" Offset="1"/>
                 </LinearGradientBrush>
             </RelativeLayout.Background>
-            
-            <!-- Content and separations -->            
-            <!-- Content -->
-            <views:Tile
-                RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0}"
-                RelativeLayout.YConstraint="0"
-                RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.25}"
-                RelativeLayout.HeightConstraint="100"/>
-            <views:Tile
-                 RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.25}"
-                 RelativeLayout.YConstraint="100"
-                 RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.25}"
-                 RelativeLayout.HeightConstraint="100"/>
-            <views:Tile
-                 RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.50}"
-                 RelativeLayout.YConstraint="200"
-                 RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.25}"
-                 RelativeLayout.HeightConstraint="100"/>
-            <views:Tile
-                 RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.75}"
-                 RelativeLayout.YConstraint="300"
-                 RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.25}"
-                 RelativeLayout.HeightConstraint="100"/>
+
             <!-- Separations -->
             <!-- Vertical lines -->
             <Rectangle BackgroundColor="Black"
@@ -57,6 +35,29 @@
                  RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1.85}"
                  RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}"
                  RelativeLayout.HeightConstraint="1"/>
+
+            <!-- Content and separations -->            
+            <!-- Content -->
+            <views:Tile
+                RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0}"
+                RelativeLayout.YConstraint="0"
+                RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.25}"
+                RelativeLayout.HeightConstraint="100"/>
+            <views:Tile
+                 RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.25}"
+                 RelativeLayout.YConstraint="100"
+                 RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.25}"
+                 RelativeLayout.HeightConstraint="100"/>
+            <views:Tile
+                 RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.50}"
+                 RelativeLayout.YConstraint="200"
+                 RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.25}"
+                 RelativeLayout.HeightConstraint="100"/>
+            <views:Tile
+                 RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.75}"
+                 RelativeLayout.YConstraint="300"
+                 RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.25}"
+                 RelativeLayout.HeightConstraint="100"/>
         </RelativeLayout>
     </ContentPage.Content>
 </ContentPage>
