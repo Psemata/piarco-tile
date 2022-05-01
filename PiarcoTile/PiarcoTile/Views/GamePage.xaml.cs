@@ -12,10 +12,10 @@ using PiarcoTile.ViewModels;
 namespace PiarcoTile.Views {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class GamePage : ContentPage {
-        public GamePage(Song song) {
+        public GamePage(Song song, int difficultyIndex) {
             InitializeComponent();
             // Context
-            this.BindingContext = new SongVM(song);
+            this.BindingContext = new SongVM(song, difficultyIndex);
             // Navigation
             NavigationPage.SetHasNavigationBar(this, false);
             NavigationPage.SetHasBackButton(this, false);

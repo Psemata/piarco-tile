@@ -15,7 +15,8 @@
             </StackLayout.Background>
             <Label Style="{StaticResource MainTitle}" Text="Piarco Tile"/>
             <Button Style="{StaticResource MainMenuButton}" Text="Jouer" Clicked="OnSelectionPageButtonClicked"></Button>
-            <Button Style="{StaticResource MainMenuButton}" Text="Réglages"></Button>
+            <Label Text="Bruno Costa et Diogo Lopes da Silva" FontSize="18" HorizontalTextAlignment="Center"/>
+            <Label Text="HE-Arc | 2021 - 2022" FontSize="15" HorizontalTextAlignment="Center"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
