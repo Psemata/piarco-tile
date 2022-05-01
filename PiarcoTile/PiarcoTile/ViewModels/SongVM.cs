@@ -27,7 +27,7 @@ namespace PiarcoTile.ViewModels {
 
         private Song song;
         private int difficultyIndex;
-        private System.Timers.Timer aTimer;
+        private Timer aTimer;
         private Map chosenMap;
 
         private List<TileVM> tiles;
@@ -53,7 +53,7 @@ namespace PiarcoTile.ViewModels {
 
         private void SetTimer()
         {
-            // Create a timer with a sixtyth of a second interval.
+            // Create a timer with a sixtieth of a second interval.
             aTimer = new Timer(1000/60);
             // Hook up the Elapsed event for the timer. 
             aTimer.Elapsed += OnTimedEvent;
@@ -65,7 +65,6 @@ namespace PiarcoTile.ViewModels {
         {
             Console.WriteLine("The Elapsed event was raised at {0:HH:mm:ss.fff}",
                               e.SignalTime);
-            
         }
 
         private void HandleTile(object sender, EventArgs e) {
