@@ -1,4 +1,5 @@
 ﻿using Android.Content.Res;
+using Android.Media;
 using PiarcoTile.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -37,6 +38,10 @@ namespace PiarcoTile.Models
                     GroupCollection groups = matches[0].Groups;
                     Map m = new Map(groups[1].Value,assets.Open(path+"/"+s));
                     Maps.Add(m);
+                }else if (s.Contains(".mp3"))
+                {
+                    //Lire le fichier mp3
+                    //MediaPlayer mediaPlayer = MediaPlayer.Create(this, Android.Net.Uri.Parse(path + "/" + s));
                 }
             }
         }

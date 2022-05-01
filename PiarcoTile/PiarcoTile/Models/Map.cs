@@ -9,7 +9,7 @@ namespace PiarcoTile.Models
     public class Map
     {
         public string Name { get; set; }
-        List<Note> Notes { get; set; }
+        public List<Note> Notes { get; set; }
 
         public Map(string name, Stream map)
         {

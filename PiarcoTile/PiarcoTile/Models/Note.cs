@@ -6,9 +6,9 @@ namespace PiarcoTile.Models
 {
     public class Note
     {
-        int X { get; set; }
-        int Y { get; set; }
-        int Time { get; set; }
+        public int X { get; set; }
+        public int Y { get; set; }
+        public int Time { get; set; }
 
         public Note(int x, int y, int time)
         {
