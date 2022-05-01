@@ -8,14 +8,13 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 using PiarcoTile.ViewModels;
+using PiarcoTile.Models;
 
 namespace PiarcoTile.Views {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Tile : ContentView {
         public Tile() {
             InitializeComponent();
-            // Context
-            this.BindingContext = new TileVM();
         }
     }
 }
