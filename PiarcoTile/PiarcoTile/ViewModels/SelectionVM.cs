@@ -28,6 +28,18 @@ namespace PiarcoTile.ViewModels {
         }
         #endregion
 
+        //public class Song {
+        //    public string name { get; set; }
+        //    public string length { get; set; }
+        //    public List<string> difficulties { get; set; }
+
+        //    public Song(string name, string length, List<string> difficulties) {
+        //        this.name = name;
+        //        this.length = length;
+        //        this.difficulties = difficulties;
+        //    }
+        //}
+
         IAssetService service = DependencyService.Get<IAssetService>();
         private List<Song> songs;
         private int currentIndex;
@@ -38,6 +50,12 @@ namespace PiarcoTile.ViewModels {
         public ICommand PreviousSong { get; private set; }
 
         public SelectionVM() {
+            /*
+            this.songs = new List<Song>();
+            this.songs.Add(new Song("Libéré, délivré", "3:16", new List<string> { "Facile", "Moyen", "Difficile", "NTM" }));
+            this.songs.Add(new Song("Ce rêve bleu", "4:20", new List<string> { "Suce", "Echo", "Yo", "Hello" }));
+            this.songs.Add(new Song("Comme un homme", "2:25", new List<string> { "Disney", "C'est", "Des", "Putes" }));
+            */
             GetSongs();
 
             this.currentIndex = 0;
