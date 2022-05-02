@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -30,25 +31,26 @@ namespace PiarcoTile.ViewModels {
         private Timer aTimer;
         private Map chosenMap;
 
-        private List<TileVM> tiles;
-        public List<TileVM> Tiles { get { return this.tiles; } private set { SetProperty<List<TileVM>>(ref tiles, value); } } // Faux, il faut utiliser une observable
+        private ObservableCollection<TileVM> tiles;
+        public ObservableCollection<TileVM> Tiles { get { return this.tiles; } private set { this.tiles = value; } }
 
         public SongVM(Song song, int difficultyIndex) {
             this.song = song;
             this.difficultyIndex = difficultyIndex;
             this.chosenMap = song.Maps[difficultyIndex];
 
-            this.tiles = new List<TileVM>();
+            this.Tiles = new ObservableCollection<TileVM>();
 
             // For each note of the chosen map, create a TileVM object and listen to its interaction
             foreach (Note note in chosenMap.Notes)
             {
-                TileVM toBeAddedTile = new TileVM(note);
+                Note noteCopy = new Note(note);
+                TileVM toBeAddedTile = new TileVM(noteCopy);
                 toBeAddedTile.TilePressed += HandleTile;
-                tiles.Add(toBeAddedTile);
+                this.Tiles.Add(toBeAddedTile);
             }
 
-            SetTimer();
+            //SetTimer();
         }
 
         private void SetTimer()
@@ -68,7 +70,7 @@ namespace PiarcoTile.ViewModels {
         }
 
         private void HandleTile(object sender, EventArgs e) {
-            Console.WriteLine("Test tile " + ((e as TileEventArgs).note) + " " + ((e as TileEventArgs).score));
+            Console.WriteLine("Test tile " + ((e as TileEventArgs).note));
         }
     }
 }

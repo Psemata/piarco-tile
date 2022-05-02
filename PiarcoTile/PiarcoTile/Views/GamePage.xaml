@@ -3,10 +3,15 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:views="clr-namespace:PiarcoTile.Views"
              x:Class="PiarcoTile.Views.GamePage">
-    
-    
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <views:DoubleToConstraint x:Key="doubleToConstraint" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
     <ContentPage.Content>
-        <RelativeLayout>
+        <RelativeLayout BindableLayout.ItemsSource="{Binding Tiles}">
             <RelativeLayout.Background>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
                     <GradientStop Color="#FCE4EC" Offset="0.1"/>
@@ -37,20 +42,27 @@
                  RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1.85}"
                  RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}"
                  RelativeLayout.HeightConstraint="1"/>
+            
             <!-- Content -->
-            <CollectionView ItemsSource="{Binding Tiles}">
-                <CollectionView.ItemTemplate>
-                    <DataTemplate>
-                        <views:Tile BindingContext="{Binding .}" RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor={Binding PosX}}"
-                                    RelativeLayout.YConstraint="{Binding PosY}"
+            <BindableLayout.ItemTemplate>
+                <DataTemplate>
+                    <views:Tile RelativeLayout.XConstraint="{Binding PosX, Converter={StaticResource doubleToConstraint}}"
+                                    RelativeLayout.YConstraint="{Binding PosY, Converter={StaticResource doubleToConstraint}}"
                                     RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.25}"
                                     RelativeLayout.HeightConstraint="100"/>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>    
+                </DataTemplate>
+            </BindableLayout.ItemTemplate>
         </RelativeLayout>
         
         <!--
+        <views:Tile RelativeLayout.XConstraint="{Binding PosX}"
+                                    RelativeLayout.YConstraint="{Binding PosY}"
+                                    RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.25}"
+                                    RelativeLayout.HeightConstraint="100"/>
+        <views:Tile RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor={Binding PosX}}"
+                                    RelativeLayout.YConstraint="{Binding PosY}"
+                                    RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.25}"
+                                    RelativeLayout.HeightConstraint="100"/>
             <views:Tile
                 RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0}"
                 RelativeLayout.YConstraint="0"

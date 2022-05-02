@@ -20,6 +20,7 @@ namespace PiarcoTile.Droid
         {
             base.OnCreate(savedInstanceState);
 
+            /*
             int uiOptions = (int)Window.DecorView.SystemUiVisibility;
 
             uiOptions |= (int)SystemUiFlags.LowProfile;
@@ -28,6 +29,7 @@ namespace PiarcoTile.Droid
             uiOptions |= (int)SystemUiFlags.Immersive;
 
             Window.DecorView.SystemUiVisibility = (StatusBarVisibility)uiOptions;
+            */
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
