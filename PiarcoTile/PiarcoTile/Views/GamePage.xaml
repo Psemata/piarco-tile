@@ -3,7 +3,6 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:views="clr-namespace:PiarcoTile.Views"
              x:Class="PiarcoTile.Views.GamePage">
-
     <ContentPage.Resources>
         <ResourceDictionary>
             <views:DoubleToConstraint x:Key="doubleToConstraint" />
@@ -11,7 +10,54 @@
     </ContentPage.Resources>
 
     <ContentPage.Content>
-        <RelativeLayout BindableLayout.ItemsSource="{Binding Tiles}">
+        <Grid>
+            <Grid.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                    <GradientStop Color="#FCE4EC" Offset="0.1"/>
+                    <GradientStop Color="#26C6DA" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="8.5*"/>
+                <RowDefinition Height="0.2"/>
+                <RowDefinition Height="1.5*"/>
+                <RowDefinition Height="0.2"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="0.2"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="0.2"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="0.2"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Separations -->
+            <!-- Vertical lines -->
+            <Rectangle BackgroundColor="Black" Grid.Column="1" Grid.RowSpan="5"/>
+            <Rectangle BackgroundColor="Black" Grid.Column="3" Grid.RowSpan="5"/>
+            <Rectangle BackgroundColor="Black" Grid.Column="5" Grid.RowSpan="5"/>
+            <!-- Horizontal lines -->
+            <Rectangle BackgroundColor="Black" Grid.Row="1" Grid.ColumnSpan="7"/>
+            <Rectangle BackgroundColor="Black" Grid.Row="3" Grid.ColumnSpan="7"/>
+
+            <!-- Content -->
+            <RelativeLayout BindableLayout.ItemsSource="{Binding Tiles}" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="7" Grid.RowSpan="5">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate>
+                        <views:Tile RelativeLayout.XConstraint="{Binding PosX, Converter={StaticResource doubleToConstraint}}"
+                                    RelativeLayout.YConstraint="{Binding PosY, Converter={StaticResource doubleToConstraint}}"
+                                    RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.25}"
+                                    RelativeLayout.HeightConstraint="100"/>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </RelativeLayout>
+        </Grid>
+        
+        <!-- 
+            <RelativeLayout>
             <RelativeLayout.Background>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
                     <GradientStop Color="#FCE4EC" Offset="0.1"/>
@@ -19,31 +65,22 @@
                 </LinearGradientBrush>
             </RelativeLayout.Background>
 
-            <!-- Separations -->
-            <!-- Vertical lines -->
-            <Rectangle BackgroundColor="Black"
-                 RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.25}"
-                 RelativeLayout.YConstraint="0"
-                 RelativeLayout.WidthConstraint="1"
-                 RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}"/>
-            <Rectangle BackgroundColor="Black"
-                 RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.50}"
-                 RelativeLayout.YConstraint="0"
-                 RelativeLayout.WidthConstraint="1"
-                 RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}"/>
-            <Rectangle BackgroundColor="Black"
-                 RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.75}"
-                 RelativeLayout.YConstraint="0"
-                 RelativeLayout.WidthConstraint="1"
-                 RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}"/>
-            <!-- Horizontal lines -->
-            <Rectangle BackgroundColor="Black"
-                 RelativeLayout.XConstraint="0"
-                 RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1.85}"
-                 RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}"
-                 RelativeLayout.HeightConstraint="1"/>
-            
-            <!-- Content -->
+            <AbsoluteLayout>
+        <Rectangle BackgroundColor="Black"
+                 AbsoluteLayout.LayoutBounds="0.5,0,100,25"
+                 AbsoluteLayout.LayoutFlags="PositionProportional"/>
+        <Rectangle BackgroundColor="Black"
+                 AbsoluteLayout.LayoutBounds="0,0.5,25,100"
+                 AbsoluteLayout.LayoutFlags="PositionProportional"/>
+        <Rectangle BackgroundColor="Black"
+                 AbsoluteLayout.LayoutBounds="1,0.5,25,100"
+                 AbsoluteLayout.LayoutFlags="PositionProportional"/>
+        <Rectangle BackgroundColor="Black"
+                 AbsoluteLayout.LayoutBounds="0.5,1,100,25"
+                 AbsoluteLayout.LayoutFlags="PositionProportional"/>
+        </AbsoluteLayout>
+
+        <RelativeLayout BindableLayout.ItemsSource="{Binding Tiles}">
             <BindableLayout.ItemTemplate>
                 <DataTemplate>
                     <views:Tile RelativeLayout.XConstraint="{Binding PosX, Converter={StaticResource doubleToConstraint}}"
@@ -53,8 +90,32 @@
                 </DataTemplate>
             </BindableLayout.ItemTemplate>
         </RelativeLayout>
+        </RelativeLayout>
+
+        -->
         
         <!--
+        <Rectangle BackgroundColor="Black"
+                 RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.25}"
+                 RelativeLayout.YConstraint="0"
+                 RelativeLayout.WidthConstraint="1"
+                 RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}"/>
+                <Rectangle BackgroundColor="Black"
+                 RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.50}"
+                 RelativeLayout.YConstraint="0"
+                 RelativeLayout.WidthConstraint="1"
+                 RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}"/>
+                <Rectangle BackgroundColor="Black"
+                 RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.75}"
+                 RelativeLayout.YConstraint="0"
+                 RelativeLayout.WidthConstraint="1"
+                 RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}"/>
+        <Rectangle BackgroundColor="Black"
+                 RelativeLayout.XConstraint="0"
+                 RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1.85}"
+                 RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}"
+                 RelativeLayout.HeightConstraint="1"/>
+
         <views:Tile RelativeLayout.XConstraint="{Binding PosX}"
                                     RelativeLayout.YConstraint="{Binding PosY}"
                                     RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.25}"

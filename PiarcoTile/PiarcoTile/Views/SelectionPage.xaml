@@ -38,7 +38,7 @@
             <!-- Content -->
             <Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" Text="Sélection de musique" FontSize="29" TextColor="#263238" HorizontalTextAlignment="Center"/>
             <Label Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4" Text="{Binding CurrentSong.Name}" FontSize="25" TextColor="#263238" HorizontalTextAlignment="Center"/>
-            <Label Grid.Row="3" Grid.Column="1" Text="Artiste :" FontSize="15" TextColor="#263238" HorizontalTextAlignment="End"/>
+            <Label Grid.Row="3" Grid.Column="1" Text="Artiste :" FontSize="15" TextColor="#263238" HorizontalTextAlignment="Center"/>
             <Label Grid.Row="3" Grid.Column="2" Text="{Binding CurrentSong.Artist}" FontSize="15" TextColor="#263238" HorizontalTextAlignment="Start"/>
             <Picker x:Name="difficulties" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" Title="Sélectionne une difficulté" TextColor="#263238" HorizontalTextAlignment="Center" ItemsSource="{Binding CurrentSong.Maps}"/>
             <Button Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2" Text="Jouer" FontSize="25" BackgroundColor="{StaticResource ButtonColor}" BorderColor="Black" BorderWidth="0.1" CornerRadius="100" Clicked="OnPlayButtonClicked"></Button>
