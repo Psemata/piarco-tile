@@ -28,7 +28,7 @@ namespace PiarcoTile.ViewModels {
 
         private Note note;
         public double PosX { get { return this.note.X; } private set { } }
-        public double PosY { get { return this.note.Y; } private set { this.note.Y = value; OnPropertyChanged(); } }
+        public double PosY { get { return this.note.Y; } set { this.note.Y = value; OnPropertyChanged(); } }
 
         public ICommand PlayTile { get; private set; }
 

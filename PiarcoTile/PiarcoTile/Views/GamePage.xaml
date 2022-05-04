@@ -49,7 +49,7 @@
                     <DataTemplate>
                         <views:Tile RelativeLayout.XConstraint="{Binding PosX, Converter={StaticResource doubleToConstraint}}"
                                     RelativeLayout.YConstraint="{Binding PosY, Converter={StaticResource doubleToConstraint}}"
-                                    RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.25}"
+                                    RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.243}"
                                     RelativeLayout.HeightConstraint="100"/>
                     </DataTemplate>
                 </BindableLayout.ItemTemplate>
