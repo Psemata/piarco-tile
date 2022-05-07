@@ -38,23 +38,31 @@ namespace PiarcoTile.ViewModels {
         private Map chosenMap;
         private int points = 0;
         private int notesUsed = 0;
+        private Dictionary<string, int> notes;
 
         private ObservableCollection<TileVM> tiles;
         public ObservableCollection<TileVM> Tiles { get { return this.tiles; } private set { this.tiles = value; } }
+
+        public event EventHandler SongFinished;
 
         public SongVM(Song song, int difficultyIndex) {
             Thread.Sleep(1000);
             this.song = song;
             this.difficultyIndex = difficultyIndex;
             this.chosenMap = song.Maps[difficultyIndex];
+            this.notes = new Dictionary<string, int>();
+            this.notes.Add("Fail", 0);
+            this.notes.Add("Bad", 0);
+            this.notes.Add("Good", 0);
+            this.notes.Add("Excellent", 0);
 
             this.Tiles = new ObservableCollection<TileVM>();
 
             song.Music.Completion += (d, e) =>
             {
-                //todo
                 double accuracy = (points * 100) / (notesUsed * 300);
-                Console.WriteLine("aah");
+                EventHandler handler = SongFinished;
+                handler?.Invoke(this, new SongFinishedEventArgs(this.notes["Fail"], this.notes["Bad"], this.notes["Good"], this.notes["Excellent"], accuracy));
             };
 
             SetTimer();
@@ -85,12 +93,11 @@ namespace PiarcoTile.ViewModels {
                     }
                 }
 
-                foreach (TileVM t in Tiles)
-                {
-                    t.PosY += 10;
-                    if(t.PosY > Application.Current.MainPage.Height)
-                    {
-                        tiles.Remove(t);
+                for(int i = 0; i < Tiles.Count; i++) {
+                    Tiles[i].PosY += 10;
+                    if (Tiles[i].PosY > Application.Current.MainPage.Height) {
+                        tiles.Remove(Tiles[i]);
+                        this.notes["Fail"] += 1;
                     }
                 }
                 return true;
@@ -104,22 +111,24 @@ namespace PiarcoTile.ViewModels {
             if (timeHit <= 500)
             {
                 notesUsed++;
-                if (timeHit >= 300)
-                {
+                if (timeHit >= 300) {
                     //1/6 de l'acc
                     points += 50;
+                    this.notes["Bad"] += 1;
                 }
                 else if (timeHit >= 200)
                 {
                     //1/3 de l'acc
                     points += 100;
+                    this.notes["Good"] += 1;
                 }
                 else
                 {
                     //1/1 de l'acc
                     points += 300;
+                    this.notes["Excellent"] += 1;
                 }
-                tiles.Remove(sender as TileVM);
+                tiles.Remove(t);
             }
         }
     }

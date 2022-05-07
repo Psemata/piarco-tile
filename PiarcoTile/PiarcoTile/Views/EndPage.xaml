@@ -25,6 +25,7 @@
                 <RowDefinition/>
                 <RowDefinition/>
                 <RowDefinition/>
+                <RowDefinition/>
             </Grid.RowDefinitions>
             <Grid.Background>
                 <LinearGradientBrush StartPoint="0,0"
@@ -38,20 +39,22 @@
 
             <!-- Content -->
             <Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="8" Text="Fin du niveau" FontSize="29" TextColor="#263238" HorizontalTextAlignment="Center"/>
-            <Label Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="8" Text="Chanson #1" FontSize="25" TextColor="#263238" HorizontalTextAlignment="Center"/>
+            <Label Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="8" Text="{Binding Song.Name}" FontSize="25" TextColor="#263238" HorizontalTextAlignment="Center"/>
             <!-- Scores -->
             <Label Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="2" Text="Score " FontSize="18" TextColor="#263238" HorizontalTextAlignment="End" Padding="0, 5, 0, 0"/>
-            <Label Grid.Row="3" Grid.Column="4" Text="S" FontSize="27" TextColor="#263238" HorizontalTextAlignment="End"/>
+            <Label Grid.Row="3" Grid.Column="4" Text="{Binding Accuracy}" FontSize="27" TextColor="#263238" HorizontalTextAlignment="End"/>
             <!-- Grades -->
             <Label Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="2" Text="Excellent : " FontSize="17" HorizontalTextAlignment="End" VerticalTextAlignment="End"/>
-            <Label Grid.Row="4" Grid.Column="4" Text="125" FontSize="17" HorizontalTextAlignment="End" VerticalTextAlignment="End"/>
+            <Label Grid.Row="4" Grid.Column="4" Text="{Binding Excellent}" FontSize="17" HorizontalTextAlignment="End" VerticalTextAlignment="End"/>
             <Label Grid.Row="5" Grid.Column="3" Text="Bien : " FontSize="17" HorizontalTextAlignment="End" VerticalTextAlignment="Center"/>
-            <Label Grid.Row="5" Grid.Column="4" Text="28" FontSize="17" HorizontalTextAlignment="End" VerticalTextAlignment="Center"/>
-            <Label Grid.Row="6" Grid.Column="2" Grid.ColumnSpan="2" Text="Raté : " FontSize="17" HorizontalTextAlignment="End" VerticalTextAlignment="Start"/>
-            <Label Grid.Row="6" Grid.Column="4" Text="14" FontSize="17" HorizontalTextAlignment="End" VerticalTextAlignment="Start"/>
+            <Label Grid.Row="5" Grid.Column="4" Text="{Binding Good}" FontSize="17" HorizontalTextAlignment="End" VerticalTextAlignment="Center"/>
+            <Label Grid.Row="6" Grid.Column="2" Grid.ColumnSpan="2" Text="Mauvais : " FontSize="17" HorizontalTextAlignment="End" VerticalTextAlignment="Center"/>
+            <Label Grid.Row="6" Grid.Column="4" Text="{Binding Bad}" FontSize="17" HorizontalTextAlignment="End" VerticalTextAlignment="Center"/>
+            <Label Grid.Row="7" Grid.Column="2" Grid.ColumnSpan="2" Text="Raté : " FontSize="17" HorizontalTextAlignment="End" VerticalTextAlignment="Start"/>
+            <Label Grid.Row="7" Grid.Column="4" Text="{Binding Failed}" FontSize="17" HorizontalTextAlignment="End" VerticalTextAlignment="Start"/>
             <!-- Buttons -->
-            <Button Grid.Row="7" Grid.Column="2" Grid.ColumnSpan="4" Text="Rejouer" FontSize="25" BackgroundColor="{StaticResource ButtonColor}" BorderColor="Black" BorderWidth="0.1" CornerRadius="100"></Button>
-            <Button Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="6" Text="Choix des musiques" FontSize="25" BackgroundColor="{StaticResource ButtonColor}" BorderColor="Black" BorderWidth="0.1" CornerRadius="100"></Button>
+            <Button Grid.Row="8" Grid.Column="2" Grid.ColumnSpan="4" Text="Rejouer" FontSize="25" BackgroundColor="{StaticResource ButtonColor}" BorderColor="Black" BorderWidth="0.1" CornerRadius="100" Clicked="OnReplayButtonClicked"></Button>
+            <Button Grid.Row="9" Grid.Column="1" Grid.ColumnSpan="6" Text="Choix des musiques" FontSize="25" BackgroundColor="{StaticResource ButtonColor}" BorderColor="Black" BorderWidth="0.1" CornerRadius="100" Clicked="OnSelectionPageButtonClicked"></Button>
         </Grid>
     </ContentPage.Content>
 </ContentPage>
