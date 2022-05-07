@@ -29,11 +29,11 @@ namespace PiarcoTile.Models
         {
             double y0 = -100.0;
             double height = Application.Current.MainPage.Height - 0.4;
-            double y1 = height*(8.5/11)+0.2;
+            double y1 = height*(8.5/11)+0.2+(1.5/11);
             int time2 = TimeHit;
             //10 toutes les 1/60 secondes donc on se déplace de 600px/s
             int time1 = (int)(time2 - (y1 - y0) / 600 * 1000);
-            return time1+2000;
+            return time1;
         }
 
         private void FormatPosX(int x) {

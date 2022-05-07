@@ -5,8 +5,12 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
 using System.Timers;
+using Android.Media;
 using PiarcoTile.Models;
+using Xamarin.Forms;
 
 namespace PiarcoTile.ViewModels {
     public class SongVM : INotifyPropertyChanged {
@@ -30,79 +34,93 @@ namespace PiarcoTile.ViewModels {
         private Song song;
         private int difficultyIndex;
         private int index = 0;
-        private Timer aTimer;
         private Stopwatch st;
         private Map chosenMap;
+        private int points = 0;
+        private int notesUsed = 0;
 
         private ObservableCollection<TileVM> tiles;
         public ObservableCollection<TileVM> Tiles { get { return this.tiles; } private set { this.tiles = value; } }
 
         public SongVM(Song song, int difficultyIndex) {
+            Thread.Sleep(1000);
             this.song = song;
             this.difficultyIndex = difficultyIndex;
             this.chosenMap = song.Maps[difficultyIndex];
 
             this.Tiles = new ObservableCollection<TileVM>();
 
-            // For each note of the chosen map, create a TileVM object and listen to its interaction
-            //foreach (Note note in chosenMap.Notes)
-            //{
-            //    Note noteCopy = new Note(note);
-            //    TileVM toBeAddedTile = new TileVM(noteCopy);
-            //    toBeAddedTile.TilePressed += HandleTile;
-            //    this.Tiles.Add(toBeAddedTile);
-            //}
-
-            for(int i = 0; i < 10; i++)
+            song.Music.Completion += (d, e) =>
             {
-                Note noteCopy = new Note(chosenMap.Notes[i]);
-                noteCopy.Y -= 500 * i;
-                TileVM toBeAddedTile = new TileVM(noteCopy);
-                toBeAddedTile.TilePressed += HandleTile;
-                this.Tiles.Add(toBeAddedTile);
-            }
+                //todo
+                double accuracy = (points * 100) / (notesUsed * 300);
+                Console.WriteLine("aah");
+            };
 
             SetTimer();
+            song.Music.Prepare();
         }
 
         private void SetTimer()
         {
             st = new Stopwatch();
-            // Create a timer with a sixtieth of a second interval.
-            aTimer = new Timer(1000/60);
-            // Hook up the Elapsed event for the timer. 
-            aTimer.Elapsed += MoveTiles;
-            aTimer.AutoReset = true;
-            aTimer.Enabled = true;
             st.Start();
-        }
 
-        private void MoveTiles(Object source, ElapsedEventArgs e)
-        {
-            if (st.ElapsedMilliseconds >= chosenMap.Notes[index].TimeStart)
+            Device.StartTimer(TimeSpan.FromMilliseconds(1000/60), () => 
             {
-                if (index < chosenMap.Notes.Count - 1 && index < 10)
+                if (st.ElapsedMilliseconds >= chosenMap.Notes[index].TimeStart)
                 {
-                    //Console.WriteLine(index);
-                    Note noteCopy = new Note(chosenMap.Notes[index]);
-                    TileVM toBeAddedTile = new TileVM(noteCopy);
-                    toBeAddedTile.TilePressed += HandleTile;
-                    index++;
-                    //this.Tiles.Add(toBeAddedTile);
+                    if (index < chosenMap.Notes.Count - 1)
+                    {
+                        Note noteCopy = new Note(chosenMap.Notes[index]);
+                        TileVM toBeAddedTile = new TileVM(noteCopy);
+                        toBeAddedTile.TilePressed += HandleTile;
+                        index++;
+                        this.Tiles.Add(toBeAddedTile);
+                    }
+                    else
+                    {
+                        st.Stop();
+                        return false;
+                    }
                 }
-            }
 
-            //Console.WriteLine(tiles.Count);
-            foreach (TileVM t in tiles)
-            {
-                //Console.WriteLine(t.PosY);
-                t.PosY += 10;
-            }
+                foreach (TileVM t in Tiles)
+                {
+                    t.PosY += 10;
+                    if(t.PosY > Application.Current.MainPage.Height)
+                    {
+                        tiles.Remove(t);
+                    }
+                }
+                return true;
+            });
         }
 
         private void HandleTile(object sender, EventArgs e) {
-            //Console.WriteLine("b");
-            tiles.Remove(sender as TileVM);
+            double time = st.ElapsedMilliseconds;
+            TileVM t = sender as TileVM;
+            double timeHit = t.TimeHit - time;
+            if (timeHit <= 500)
+            {
+                notesUsed++;
+                if (timeHit >= 300)
+                {
+                    //1/6 de l'acc
+                    points += 50;
+                }
+                else if (timeHit >= 200)
+                {
+                    //1/3 de l'acc
+                    points += 100;
+                }
+                else
+                {
+                    //1/1 de l'acc
+                    points += 300;
+                }
+                tiles.Remove(sender as TileVM);
+            }
         }
     }
 }

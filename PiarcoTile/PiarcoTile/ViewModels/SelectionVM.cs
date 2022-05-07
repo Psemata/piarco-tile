@@ -1,4 +1,5 @@
-﻿using PiarcoTile.Interfaces;
+﻿using Android.Media;
+using PiarcoTile.Interfaces;
 using PiarcoTile.Models;
 using System;
 using System.Collections.Generic;
@@ -67,7 +68,7 @@ namespace PiarcoTile.ViewModels {
             foreach (string s in c) {
                 MatchCollection matches = rx.Matches(s);
                 GroupCollection groups = matches[0].Groups;
-                Song song = new Song(int.Parse(groups[1].Value), groups[3].Value, groups[2].Value, "", "Songs/" + groups[0].Value, service);
+                Song song = new Song(int.Parse(groups[1].Value), groups[3].Value, groups[2].Value, null, "Songs/" + groups[0].Value, service);
                 songs.Add(song);
             }
         }

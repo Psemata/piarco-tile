@@ -25,6 +25,11 @@ namespace PiarcoTile.Droid.Models
             return assets.List(path);
         }
 
+        public AssetFileDescriptor OpenFd(string path)
+        {
+            return assets.OpenFd(path);
+        }
+
         public string GetAssetString(string path)
         {
             throw new NotImplementedException();

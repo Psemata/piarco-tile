@@ -13,10 +13,10 @@ namespace PiarcoTile.Models
         public string Name { get; set; }
         public string Artist { get; set; }
         int ID { get; set; }
-        string Music { get; set; }
+        public MediaPlayer Music { get; set; }
         public List<Map> Maps { get; set; }
 
-        public Song(int id, string name, string artist, string music, string path, IAssetService assets)
+        public Song(int id, string name, string artist, MediaPlayer music, string path, IAssetService assets)
         {
             this.ID = id;
             this.Name = name;
@@ -41,7 +41,13 @@ namespace PiarcoTile.Models
                 }else if (s.Contains(".mp3"))
                 {
                     //Lire le fichier mp3
-                    //MediaPlayer mediaPlayer = MediaPlayer.Create(this, Android.Net.Uri.Parse(path + "/" + s));
+                    Music = new MediaPlayer();
+                    var fd = assets.OpenFd(path + "/" + s);
+                    Music.Prepared += (d, e) =>
+                    {
+                        Music.Start();
+                    };
+                    Music.SetDataSource(fd.FileDescriptor, fd.StartOffset, fd.Length);
                 }
             }
         }
