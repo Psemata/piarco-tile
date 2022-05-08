@@ -27,8 +27,11 @@ namespace PiarcoTile.ViewModels {
         #endregion
 
         private Note note;
+        //Time in miliseconds when the note needs to be hit
         public double TimeHit { get { return this.note.TimeHit; } private set { } }
+        //X position of the note
         public double PosX { get { return this.note.X; } private set { } }
+        //Y position of the note
         public double PosY { get { return this.note.Y; } set { this.note.Y = value; OnPropertyChanged(); } }
 
         public ICommand PlayTile { get; private set; }

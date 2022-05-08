@@ -10,10 +10,15 @@ namespace PiarcoTile.Models
 {
     public class Song
     {
+        //Name of the song
         public string Name { get; set; }
+        //Name of the artist
         public string Artist { get; set; }
+        //ID of the song, not currently used
         int ID { get; set; }
+        //Song that needs to be played
         public MediaPlayer Music { get; set; }
+        //Every difficulty of the song
         public List<Map> Maps { get; set; }
 
         public Song(int id, string name, string artist, MediaPlayer music, string path, IAssetService assets)
@@ -25,7 +30,11 @@ namespace PiarcoTile.Models
             this.Maps = new List<Map>();
             GenerateMaps(path, assets);
         }
-
+        /// <summary>
+        /// Function that will read folder containing .osu and .mp3 files and create maps and mediaplayer corresponding
+        /// </summary>
+        /// <param name="path"></param>
+        /// <param name="assets"></param>
         private void GenerateMaps(string path, IAssetService assets)
         {
             string[] c = assets.GetAssetList(path);
@@ -40,7 +49,7 @@ namespace PiarcoTile.Models
                     Maps.Add(m);
                 }else if (s.Contains(".mp3"))
                 {
-                    //Lire le fichier mp3
+                    //Read mp3 file
                     Music = new MediaPlayer();
                     var fd = assets.OpenFd(path + "/" + s);
                     Music.Prepared += (d, e) =>

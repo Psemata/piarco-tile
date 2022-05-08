@@ -7,7 +7,6 @@ using System.Text;
 namespace PiarcoTile.Interfaces {
     public interface IAssetService {
         string[] GetAssetList(string path);
-        string GetAssetString(string path);
 
         AssetFileDescriptor OpenFd(string path);
 

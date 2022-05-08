@@ -8,7 +8,9 @@ namespace PiarcoTile.Models
 {
     public class Map
     {
+        //Name of the difficulty
         public string Name { get; set; }
+        //List of notes of the map
         public List<Note> Notes { get; set; }
 
         public Map(string name, Stream map)
@@ -17,7 +19,10 @@ namespace PiarcoTile.Models
             Notes = new List<Note>();
             ReadMap(map);
         }
-
+        /// <summary>
+        /// Function to read .osu file to create note objects
+        /// </summary>
+        /// <param name="map"></param>
         public void ReadMap(Stream map)
         {
             bool read = false;
