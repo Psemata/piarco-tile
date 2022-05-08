@@ -6,6 +6,7 @@ using System.Text;
 namespace PiarcoTile.ViewModels {
     public class EndVM {
 
+        // Stats of the song the user finished
         public int Failed { get; set; }
         public int Bad { get; set; }
         public int Good { get; set; }

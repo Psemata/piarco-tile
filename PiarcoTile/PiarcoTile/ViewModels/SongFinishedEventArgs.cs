@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace PiarcoTile.ViewModels {
+    /// <summary>
+    /// Event arg used to give the GamePage the information needed
+    /// </summary>
     public class SongFinishedEventArgs : EventArgs {
         public int failed;
         public int bad;

@@ -5,6 +5,9 @@ using System.IO;
 using System.Text;
 
 namespace PiarcoTile.Interfaces {
+    /// <summary>
+    /// Interface used to communicate with the Android project
+    /// </summary>
     public interface IAssetService {
         string[] GetAssetList(string path);
 

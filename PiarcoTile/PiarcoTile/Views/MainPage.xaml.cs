@@ -16,6 +16,11 @@ namespace PiarcoTile.Views {
             NavigationPage.SetHasNavigationBar(this, false);
         }
 
+        /// <summary>
+        /// Goes to the selection page
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         async void OnSelectionPageButtonClicked(object sender, EventArgs e) {
             await Navigation.PushModalAsync(new NavigationPage(new SelectionPage()));
         }

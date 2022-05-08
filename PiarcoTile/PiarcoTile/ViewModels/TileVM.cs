@@ -34,6 +34,7 @@ namespace PiarcoTile.ViewModels {
         //Y position of the note
         public double PosY { get { return this.note.Y; } set { this.note.Y = value; OnPropertyChanged(); } }
 
+        // ICommand used when the tile is pressed
         public ICommand PlayTile { get; private set; }
 
         public event EventHandler TilePressed;

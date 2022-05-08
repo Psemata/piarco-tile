@@ -45,6 +45,7 @@ namespace PiarcoTile.ViewModels {
             this.currentIndex = 0;
             this.CurrentSong = this.songs[currentIndex];
 
+            // Changing song in the selection menu
             this.NextSong = new Command(
                 execute:() => {
                     this.currentIndex = (currentIndex + 1) % this.songs.Count;

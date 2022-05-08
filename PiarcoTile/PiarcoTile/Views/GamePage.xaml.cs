@@ -29,9 +29,14 @@ namespace PiarcoTile.Views {
             NavigationPage.SetHasBackButton(this, false);
         }
 
+        /// <summary>
+        /// Goes to the End Page, triggered when the song is finished
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private async void HandleFinishedSong(object sender, EventArgs e) {
             SongFinishedEventArgs args = e as SongFinishedEventArgs;
-            await Navigation.PushModalAsync(new NavigationPage(new EndPage(args.failed, args.bad, args.good, args.excellent, args.accuracy, this.song, this.difficultyIndex)));
+            await Navigation.PushModalAsync(new NavigationPage(new EndPage(args.failed, args.bad, args.good, args.excellent, args.accuracy, this.song)));
         }
     }
 }

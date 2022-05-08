@@ -13,14 +13,8 @@ namespace PiarcoTile.Views {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class EndPage : ContentPage {
 
-        private Song song;
-        private int difficultyIndex;
-
-        public EndPage(int failed, int bad, int good, int excellent, double accuracy, Song song, int difficultyIndex) {
+        public EndPage(int failed, int bad, int good, int excellent, double accuracy, Song song) {
             InitializeComponent();
-
-            this.song = song;
-            this.difficultyIndex = difficultyIndex;
 
             // Context
             this.BindingContext = new EndVM(failed, bad, good, excellent, accuracy, song);
@@ -28,11 +22,12 @@ namespace PiarcoTile.Views {
             NavigationPage.SetHasNavigationBar(this, false);
             NavigationPage.SetHasBackButton(this, false);
         }
-
-        async void OnReplayButtonClicked(object sender, EventArgs e) {
-           await Navigation.PushModalAsync(new NavigationPage(new GamePage(this.song, this.difficultyIndex)));
-        }
-
+        
+        /// <summary>
+        /// The user wishes to select another song
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         async void OnSelectionPageButtonClicked(object sender, EventArgs e) {
             await Navigation.PushModalAsync(new NavigationPage(new SelectionPage()));
         }
